@@ -84,7 +84,7 @@
   // }
   
 
-void main() {
+// void main() {
 
   // int x = 20;
 
@@ -119,7 +119,7 @@ void main() {
   // Body => process , methods, properties
   // Scope
   // nested
-}
+//}
 
 // void main() {
 
@@ -183,3 +183,36 @@ void main() {
 //     ],
 //   }
 // ];
+
+
+
+
+
+// no search outside ( book, documentaion )
+// Map, Loop 
+
+
+  // 1- Inputs => Variables =>
+              // 1- String
+              // 2- num => int, double
+              // 3- bool
+              // 4- List
+              // 5- Set
+              // 6- Map
+
+
+  // 2- Process 
+              // 1- Opertators
+                    // 1- Arth 
+                    // 2- Logical
+                    // 3- Comp
+              // 2- Conditions
+              // 3- Loops
+                    // For
+                    // While
+                    // Do While
+
+
+  // 3- Orga
+              // FP => Functional Programming
+              // OOP => Object Oriented Programming
