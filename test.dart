@@ -1,218 +1,54 @@
-// // List y = [100, 500, 900];
+import 'test2.dart';
 
-// // x.addAll(y);
 
-// // x.insertAll(0, y);
+main() {
 
-// // x.remove(500);
+  // List x = [10, 20, 30];
 
-// // x.removeAt(2);
+  // num sum = 0;
 
-// // x[0] = 20;
+  // sum += x[0];
+  // sum += x[1];
+  // sum += x[2];
 
-// List<List<List>> x = [
-//   [
-//     [10, 20, 30],
-//     [10, 20, 30]
-//   ],
-//   [
-//     [true, 'ahmed', 10.5],
-//     [true, 'ahmed', 10.5]
-//   ]
-// ];
-
-// Map<int, Map<String, dynamic>> std = {
-//   1 : {
-//     'name' : 'ahmed',
-//     'email' : 'ahmed.com',
-//     'age' : 20,
-//     'familyMember' : [
-//       {
-//         'memberName' : 'Ahmed Father',
-//         'memberAge' : 50,
-//       },
-//       {
-//         'memberName' : 'Ahmed Mother',
-//         'memberAge' : 40,
-//       },
-//     ],
-//   },
-//   2 : {
-//     'name' : 'ali',
-//     'email' : 'ali.com',
-//     'age' : 25,
-//     'familyMember' : [
-//       {
-//         'memberName' : 'Ali Father',
-//         'memberAge' : 55,
-//       },
-//       {
-//         'memberName' : 'Ali Mother',
-//         'memberAge' : 45,
-//       },
-//     ],
-//   }
-// };
-
-// void main() {
-
-//   print('''
-//   Std Name is: ${std[1]!['name']},
-//   Std Father Name is ${std[1]!['familyMember'][0]['memberName']},
-//   Std Mother Name is ${std[1]!['familyMember'][1]['memberName']},
-//   ''');
-// }
-
-// for(Map<String, dynamic> i in stds) {
-  //   print('''
-  //   Std Name is: ${i['name']},
-  //   Std Father Name is ${i['familyMember'][0]['memberName']},
-  //   Std Mother Name is ${i['familyMember'][1]['memberName']},
-  // ''');
+  // for(num i in x) {
+  //   sum += i;
   // }
 
-  // std.forEach((k, v) {
-  //   print('''
-  //   Std Name is: ${v['name']},
-  //   Std Father Name is ${v['familyMember'][0]['memberName']},
-  //   Std Mother Name is ${v['familyMember'][1]['memberName']},
-  // ''');
+  // for(int i = 0; i < x.length; i++) {
+  //   sum += x[i];
+  // }
+
+  // x.forEach((i) {
+  //   sum += i;
   // });
 
-  // for(int i = 1; i < std.length; i++) {
-  //   print(std[i]);
-  // }
-  
-
-// void main() {
-
-  // int x = 20;
-
-  // if(x == 20) {
-  //   print('its ==');
-  //   if(x < 25){
-  //     print('< 25');
+  // std.forEach((key, value) {
+  //   num sum = 0;
+  //   value['scores'].forEach((k, v) {
+  //     sum += v;
+  //   });
+  //   if(sum < 400) {
+  //     value['success'] = false;
   //   }else{
-  //     print('> 25');
+  //     value['success'] = true;
   //   }
-  // }else if(x > 20){
-  //   print('its >');
-  // }else if(x < 20){
-  //   print('<');
-  // }else{
-  //   print('not above');
-  // }
+  // });
+
+  // print(std);
 
 
-  // while(x != 20) {
-  //   print('!=');
-  //   break;
-  // }
-
-  // do{
-  //   print('!=');
-  // }while(x != 20);
-
-  // for() {}
-
-  // Header => Definition (condition, (conditon, startpoint, endpoint, inc), arg, async, inher)
-  // Body => process , methods, properties
-  // Scope
-  // nested
-//}
-
-// void main() {
-
-//   List x = [10, 20, 30];
-
-//   // for(int i = 0; i < x.length; i++) {
-//   //   x[i] += 10;
-//   // }
-
-//   // for(int i in x) {
-//   //   i += 10;
-//   // }
-
-//   // print(x);
-
-//   // List y = [];
-
-//   // add values from 100 to 500
-//   // ex: 110, 120, 130, 140
-//   // print(y);
-
-//   // for(int i = 100; i < 500; i +=10) {
-//   //   y.add(i);
-//   // }
-
-//   // print(y);
-
-// }
+  // std.forEach((key, value) {
+  //   num sum = 0;
+  //   value['familyMember'].forEach((i) {
+  //     sum += i['memberAge'];
+  //   });
+  //   print('User ${value['name']} Family Member $sum');
+  // });
 
 
-
-// List<Map<String, dynamic>> stds = [
-//   {
-//     'name' : 'ahmed',
-//     'email' : 'ahmed.com',
-//     'age' : 20,
-//     'familyMember' : [
-//       {
-//         'memberName' : 'Ahmed Father',
-//         'memberAge' : 50,
-//       },
-//       {
-//         'memberName' : 'Ahmed Mother',
-//         'memberAge' : 40,
-//       },
-//     ],
-//   },
-//   {
-//     'name' : 'ali',
-//     'email' : 'ali.com',
-//     'age' : 25,
-//     'familyMember' : [
-//       {
-//         'memberName' : 'Ali Father',
-//         'memberAge' : 55,
-//       },
-//       {
-//         'memberName' : 'Ali Mother',
-//         'memberAge' : 45,
-//       },
-//     ],
-//   }
-// ];
+  // for each std عمر الطالب اقل من عمر كل من والدة ووالدته بكام
+  // read about Functional Programming
 
 
-
-
-
-// no search outside ( book, documentaion )
-// Map, Loop 
-
-
-  // 1- Inputs => Variables =>
-              // 1- String
-              // 2- num => int, double
-              // 3- bool
-              // 4- List
-              // 5- Set
-              // 6- Map
-
-
-  // 2- Process 
-              // 1- Opertators
-                    // 1- Arth 
-                    // 2- Logical
-                    // 3- Comp
-              // 2- Conditions
-              // 3- Loops
-                    // For
-                    // While
-                    // Do While
-
-
-  // 3- Orga
-              // FP => Functional Programming
-              // OOP => Object Oriented Programming
+}

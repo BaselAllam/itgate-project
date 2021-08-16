@@ -1,3 +1,4 @@
+
 Map<int, Map<String, dynamic>> std = {
   1 : {
     'name' : 'ahmed',
@@ -80,15 +81,3 @@ Map<int, Map<String, dynamic>> std = {
     'success' : true
   }
 };
-
-// scores sum for each std 
-// condition 
-// reasign success
-
-
-main() {
-
- for(int i = 0; i < 5; i++) {
-   print('im');
- }
-}
