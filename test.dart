@@ -46,9 +46,11 @@ main() {
   //   print('User ${value['name']} Family Member $sum');
   // });
 
-
-  // for each std عمر الطالب اقل من عمر كل من والدة ووالدته بكام
-  // read about Functional Programming
+  std.forEach((k, v) {
+    v['familyMember'].forEach((i) {
+      print(i['memberAge'] - v['age']);
+    });
+  });
 
 
 }
