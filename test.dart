@@ -1,56 +1,43 @@
-import 'test2.dart';
 
 
 main() {
 
-  // List x = [10, 20, 30];
+  List<num> x = [100, 200, 400];
 
-  // num sum = 0;
+  // print(avg(x, 20));
 
-  // sum += x[0];
-  // sum += x[1];
-  // sum += x[2];
+  print(avg2());
 
-  // for(num i in x) {
-  //   sum += i;
-  // }
-
-  // for(int i = 0; i < x.length; i++) {
-  //   sum += x[i];
-  // }
-
-  // x.forEach((i) {
-  //   sum += i;
-  // });
-
-  // std.forEach((key, value) {
-  //   num sum = 0;
-  //   value['scores'].forEach((k, v) {
-  //     sum += v;
-  //   });
-  //   if(sum < 400) {
-  //     value['success'] = false;
-  //   }else{
-  //     value['success'] = true;
-  //   }
-  // });
-
-  // print(std);
-
-
-  // std.forEach((key, value) {
-  //   num sum = 0;
-  //   value['familyMember'].forEach((i) {
-  //     sum += i['memberAge'];
-  //   });
-  //   print('User ${value['name']} Family Member $sum');
-  // });
-
-  std.forEach((k, v) {
-    v['familyMember'].forEach((i) {
-      print(i['memberAge'] - v['age']);
-    });
-  });
-
-
+  print('heloooooo');
 }
+
+// Exception Handling
+// Framework Crach Silently 
+// Crash Report
+
+num avg2({List<num>? l = const [], num? deductValue = 0}) {
+
+  try{
+      num sum = l!.reduce((value, element) => value + element);
+
+    num avg = sum / l.length;
+
+    return avg - deductValue!;
+  }catch(e) {
+    print(e);
+    return 404;
+  }
+}
+
+num avg(List<num> l, num deductValue) {
+
+  num sum = l.reduce((value, element) => value + element);
+
+  num avg = sum / l.length;
+
+  return avg - deductValue;
+}
+
+
+// Positional Arg => required, passed by index
+// NonPositional Arg => not required give pair key 

@@ -32,6 +32,7 @@ void main() {
   std.forEach((key, value) {
     stdData(value);
     calAges(value);
+    sum(value['scores']);
   });
 
 }
@@ -44,6 +45,17 @@ calAges(Map<String, dynamic> x) {
   x['familyMember'].forEach((i) {
     print('${i['memberAge'] - x['age']}');
   });
+}
+
+sum(Map<String, int> i) {
+  
+  num sum = 0;
+
+  i.forEach((key, value) {
+    sum += value;
+  });
+
+  print(sum);
 }
 
   // std.forEach((key, value) {
