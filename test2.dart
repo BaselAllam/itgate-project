@@ -81,3 +81,31 @@ Map<int, Map<String, dynamic>> std = {
     'success' : true
   }
 };
+
+
+Map<int, Map<String, dynamic>> players = {
+  1 : {
+    'playerName' : 'ahmed',
+    'playerScores' : 200,
+    'playerPosition' : 'Center',
+    'playerClub' : 'Arsenal'
+  },
+  2 : {
+    'playerName' : 'mohamed',
+    'playerScores' : 250,
+    'playerPosition' : 'Center',
+    'playerClub' : 'ManUnited'
+  },
+  3 : {
+    'playerName' : 'sayed',
+    'playerScores' : 100,
+    'playerPosition' : 'Backleft',
+    'playerClub' : 'ManCity'
+  },
+  4 : {
+    'playerName' : 'mohsen',
+    'playerScores' : 0,
+    'playerPosition' : 'Gool Keper',
+    'playerClub' : 'Liverpool'
+  },
+};
