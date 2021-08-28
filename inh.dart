@@ -1,36 +1,43 @@
 
+class ABC extends Inter with A, B, C{}
 
-class Person{
+class Inter{}
 
-  String name;
-  int age;
-  static int counter = 0;
 
-  Person(this.name, this.age) {
-    counter++;
+mixin A on Inter{
+
+  bool x = true;
+
+  sleep() {
+    print('a sleeping');
   }
 
-  String personData() {
-    return '$name, $age';
-  }
 }
 
 
-class Student extends Person{
+mixin B on Inter{
 
-  late int score;
+  bool bx = false;
 
-  Student(name, age, this.score) : super(name, age);
+  play() {
+    print('b playing');
+  }
+
+}
+
+
+mixin C on Inter{
+
+  eat() {
+    print('c eating');
+  }
+
 }
 
 
 main() {
 
-  Student std = Student('name', 20, 200);
+  ABC abc = ABC();
 
-  print(std.personData());
+  print(abc.x);
 }
-
-
-// Research Multiple Inhertience & Diamond Problem
-// StateLessWidget & StateFulWidget
