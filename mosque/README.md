@@ -1,6 +1,6 @@
-# food
+# mosque
 
-Food Delivery App Made with Group from ItGate Education Center
+A new Flutter project.
 
 ## Getting Started
 
