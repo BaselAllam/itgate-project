@@ -9,6 +9,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+List<Map<String, dynamic>> drawerData = [
+  {
+    'icon' : Icons.home,
+    'txt' : 'Home'
+  },
+  {
+    'icon' : Icons.favorite,
+    'txt' : 'Wishlist'
+  },
+  {
+    'icon' : Icons.shopping_basket,
+    'txt' : 'Shopping Basket'
+  },
+];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,26 +44,11 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: EdgeInsets.only(top: 20.0),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.home, color: Colors.black, size: 20.0),
-                  Text('Home', style: TextStyle(color: Colors.black))
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(Icons.favorite, color: Colors.black, size: 20.0),
-                  Text('Wishlist', style: TextStyle(color: Colors.black))
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(Icons.info, color: Colors.black, size: 20.0),
-                  Text('Abouts Us', style: TextStyle(color: Colors.black))
-                ],
+              for(Map<String, dynamic> i in drawerData)
+              ListTile(
+                leading: Icon(i['icon'], color: Colors.black, size: 20.0),
+                title: Text(i['txt'], style: TextStyle(color: Colors.black))
               ),
             ],
           ),
