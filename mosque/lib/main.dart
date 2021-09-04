@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mosque/homepage.dart';
+import 'package:mosque/screens/homepage.dart';
 
 
 void main() => runApp(MyApp());
