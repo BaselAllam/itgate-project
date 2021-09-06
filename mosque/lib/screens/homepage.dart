@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mosque/demodata.dart';
+import 'package:mosque/screens/allnearbymosque.dart';
+import 'package:mosque/theme/sharedStyle.dart';
 import 'package:mosque/widgets/mosquewidget.dart';
 
 
@@ -19,11 +21,11 @@ class _HomePageState extends State<HomePage> {
         title: ListTile(
           title: Text(
             'Hello Bassel',
-            style: TextStyle(color: Color(0xff34deeb), fontSize: 17.0)
+            style: secondaryTextStyle,
           ),
           subtitle: Text(
             'Cairo, Egypt',
-            style: TextStyle(color: Colors.black, fontSize: 20.0)
+            style: primaryTextStyle
           ),
         ),
         actions: [
@@ -57,11 +59,11 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     'Dhur\n 12:00 PM',
-                    style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                    style: primaryWhiteTextStyle
                   ),
                   Text(
                     '  Next Pary: Asr\n   15:40',
-                    style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+                    style: primaryWhiteTextStyle
                   ),
                 ]
               ),
@@ -69,9 +71,12 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               title: Text(
                 'Nearby Mosques',
-                style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+                style: primaryTextStyle,
               ),
-              trailing: Icon(Icons.arrow_forward_ios, color: Colors.black, size: 20.0)
+              trailing: Icon(Icons.arrow_forward_ios, color: Colors.black, size: 20.0),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(fullscreenDialog: true, builder: (_) {return AllNearbyMosque();}));
+              },
             ),
             Container(
               height: MediaQuery.of(context).size.height/2,
