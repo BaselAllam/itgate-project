@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:mosque/screens/homepage.dart';
-import 'package:mosque/screens/signup.dart';
 import 'package:mosque/theme/sharedStyle.dart';
 import 'package:mosque/widgets/fields.dart';
 
 
-
-class SignIn extends StatefulWidget {
+class SignUp extends StatefulWidget {
 
   @override
-  _SignInState createState() => _SignInState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
 
 TextEditingController emailController = TextEditingController();
+TextEditingController userNameController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 
 GlobalKey<FormState> emailKey = GlobalKey<FormState>();
+GlobalKey<FormState> userNameKey = GlobalKey<FormState>();
 GlobalKey<FormState> passwordKey = GlobalKey<FormState>();
 
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -32,6 +32,17 @@ bool isSecured = true;
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                icon: Icon(Icons.arrow_back_ios),
+                color: primaryAppColor,
+                iconSize: 25.0,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
             Container(
               height: 200.0,
               margin: EdgeInsets.only(top: 20.0, bottom: 10.0),
@@ -59,6 +70,7 @@ bool isSecured = true;
               ),
             ),
             field('Email Address', Icons.email, TextInputType.emailAddress, emailController, false, SizedBox(), emailKey),
+            field('User Name', Icons.account_box, TextInputType.text, userNameController, false, SizedBox(), userNameKey),
             field(
               'Password',
               Icons.lock,
@@ -77,21 +89,11 @@ bool isSecured = true;
               ),
               passwordKey
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: InkWell(
-                onTap: () {},
-                child: Text(
-                  'Forgot Password?\n',
-                  style: TextStyle(color: primaryAppColor, fontSize: 20.0)
-                ),
-              ),
-            ),
             Column(
               children: [
                 TextButton(
                   child: Text(
-                    'Login',
+                    'SignUp',
                     style: primaryWhiteTextStyle,
                   ),
                   style: TextButton.styleFrom(
@@ -109,18 +111,6 @@ bool isSecured = true;
                   },
                 ),
               ],
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) {return SignUp();}));
-                },
-                child: Text(
-                  '\nHave an Account? SignUp',
-                  style: TextStyle(color: primaryAppColor, fontSize: 20.0)
-                ),
-              ),
             ),
           ],
         ),
