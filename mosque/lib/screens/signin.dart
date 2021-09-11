@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mosque/models/shared.dart';
 import 'package:mosque/screens/homepage.dart';
 import 'package:mosque/screens/signup.dart';
 import 'package:mosque/theme/sharedStyle.dart';
@@ -104,6 +105,7 @@ bool isSecured = true;
                         snack(Colors.red, 'Some Fields Required!')
                       );
                     }else{
+                      saveToLocal('userEmail', emailController.text);
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {return HomePage();}));
                     }
                   },

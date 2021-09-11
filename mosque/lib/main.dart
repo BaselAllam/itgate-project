@@ -1,29 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:mosque/models/shared.dart';
+import 'package:mosque/screens/homepage.dart';
 import 'package:mosque/screens/signin.dart';
 
 
 void main() => runApp(MyApp());
 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+String? userEmail = '';
+
+@override
+void initState() {
+  checkUser();
+  super.initState();
+}
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignIn(),
+      home: userEmail!.isEmpty ? SignIn() : HomePage(),
     );
   }
+  checkUser() async {
+    String? email = await getFromLocal('userEmail');
+
+    setState(() {
+      userEmail = email!;
+    });
+  }
 }
-
-
-// https://assets.materialup.com/uploads/31f248a8-5755-44bd-ba14-133fd3a5d83c/preview.png
-// https://img.freepik.com/free-psd/restaurant-food-delivery-mobile-app-ui-design_279025-18.jpg?size=626&ext=jpg
-
-// create project
-// make project arch ( folder , file )
-// write shared theme
-// main.dart 
-// start your first screen 
-// find the reuseable widget
-// start your second screen
