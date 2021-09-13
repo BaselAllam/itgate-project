@@ -22,12 +22,12 @@ class _MosqueDetailsState extends State<MosqueDetails> {
 
   Set<Marker> markers = {};
 
-  @override
-  void initState() {
-    // currentPosition();
-    searchLocation();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // currentPosition();
+  //   searchLocation();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -118,23 +118,23 @@ class _MosqueDetailsState extends State<MosqueDetails> {
             ],
           ),
         ),
-        Container(
-          height: 200.0,
-          margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
-          alignment: Alignment.center,
-          child: isMapLoading == true ? 
-          CircularProgressIndicator() : 
-           GoogleMap(
-            initialCameraPosition: CameraPosition(
-              zoom: 12,
-              target: position == null ? LatLng(30.0444, 31.2357) : LatLng(position!.latitude, position!.longitude)
-            ),
-            mapType: MapType.normal,
-            myLocationEnabled: true,
-            myLocationButtonEnabled: true,
-            markers: markers,
-          )
-        ),
+        // Container(
+        //   height: 200.0,
+        //   margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
+        //   alignment: Alignment.center,
+        //   child: isMapLoading == true ? 
+        //   CircularProgressIndicator() : 
+        //    GoogleMap(
+        //     initialCameraPosition: CameraPosition(
+        //       zoom: 12,
+        //       target: position == null ? LatLng(30.0444, 31.2357) : LatLng(position!.latitude, position!.longitude)
+        //     ),
+        //     mapType: MapType.normal,
+        //     myLocationEnabled: true,
+        //     myLocationButtonEnabled: true,
+        //     markers: markers,
+        //   )
+        // ),
         Container(
           alignment: Alignment.center,
           margin: EdgeInsets.all(10.0),

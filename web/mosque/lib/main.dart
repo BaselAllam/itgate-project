@@ -17,11 +17,11 @@ class _MyAppState extends State<MyApp> {
 
 String? userEmail = '';
 
-@override
-void initState() {
-  checkUser();
-  super.initState();
-}
+// @override
+// void initState() {
+//   checkUser();
+//   super.initState();
+// }
 
   @override
   Widget build(BuildContext context) {
