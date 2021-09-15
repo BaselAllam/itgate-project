@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mosque/models/mosque/mosqueController.dart';
 import 'package:mosque/theme/sharedStyle.dart';
 import 'package:mosque/widgets/fields.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 
 
@@ -78,35 +80,40 @@ File? pickedImage;
                 ],
               ),
               field('Mosque Name', Icons.text_fields, TextInputType.text, mosqueNameController, false, SizedBox(), mosqueNameKey),
-              ListTile(
-                title: Text(
-                  'Pick Location',
-                  style: primaryTextStyle
-                ),
-                trailing: Icon(Icons.location_on, color: Colors.black, size: 20.0),
-              ),
               Column(
               children: [
-                TextButton(
-                  child: Text(
-                    'Add Mosque',
-                    style: primaryWhiteTextStyle,
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: primaryAppColor,
-                    fixedSize: Size(MediaQuery.of(context).size.width/1.5, 40.0),
-                  ),
-                  onPressed: () {
-                    if(!formKey.currentState!.validate()){
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        snack(Colors.red, 'Some Fields Required!')
-                      );
-                    }else{
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        snack(Colors.green, 'Mosque Added Succefully')
-                      );
-                    }
-                  },
+                ScopedModelDescendant(
+                  builder: (context, child, MosqueController model) {
+                    return TextButton(
+                      child: model.isAddMosqueLoading == true ? Center(child: CircularProgressIndicator()) :
+                       Text(
+                        'Add Mosque',
+                        style: primaryWhiteTextStyle,
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: primaryAppColor,
+                        fixedSize: Size(MediaQuery.of(context).size.width/1.5, 40.0),
+                      ),
+                      onPressed: () async {
+                        if(!formKey.currentState!.validate()){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            snack(Colors.red, 'Some Fields Required!')
+                          );
+                        }else{
+                          bool _isValid = await model.addMosque(mosqueNameController.text, 'https://i2.wp.com/www.agoda.com/wp-content/uploads/2019/06/shutterstock_721552321-1024x683.jpg?resize=1024%2C683');
+                          if(_isValid == true) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              snack(Colors.green, 'Mosque Added Succefully')
+                            );
+                          }else{
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              snack(Colors.red, 'Some thing went wrong')
+                            );
+                          }
+                        }
+                      },
+                    );
+                  }
                 ),
               ],
             ),

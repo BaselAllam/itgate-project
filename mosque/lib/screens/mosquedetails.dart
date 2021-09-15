@@ -180,16 +180,6 @@ class _MosqueDetailsState extends State<MosqueDetails> {
   Text rowText(String txt) {
     return Text('$txt\n', style: primaryTextStyle);
   }
-  currentPosition() async {
-    setState(() {
-      isMapLoading = true;
-    });
-    Position _geo = await Geolocator.getCurrentPosition();
-    setState(() {
-      position = _geo;
-      isMapLoading = false;
-    });
-  }
   searchLocation() async {
     setState(() {
       isMapLoading = true;

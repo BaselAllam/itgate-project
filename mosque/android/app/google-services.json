@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "426123548053",
+    "project_id": "mosque-60e22",
+    "storage_bucket": "mosque-60e22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426123548053:android:921e8db3222ee479f7929c",
+        "android_client_info": {
+          "package_name": "com.example.mosque"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426123548053-sd531lf0seghn93dfd7a6t08v0omeuff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mosque",
+            "certificate_hash": "ce991a63f5a2a0ac2a2e96d34685f6a81cba9979"
+          }
+        },
+        {
+          "client_id": "426123548053-k2j85b74dcipoktuar7ntu97861k2nsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_9hA1uzq89hiEIEArWhwIZzWPKPxXtgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426123548053-k2j85b74dcipoktuar7ntu97861k2nsg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

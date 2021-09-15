@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mosque/demodata.dart';
+import 'package:mosque/models/mosque/mosqueController.dart';
 import 'package:mosque/screens/addMosque.dart';
 import 'package:mosque/screens/allnearbymosque.dart';
 import 'package:mosque/theme/sharedStyle.dart';
 import 'package:mosque/widgets/mosquewidget.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -84,15 +86,20 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(context, MaterialPageRoute(fullscreenDialog: true, builder: (_) {return AllNearbyMosque();}));
               },
             ),
-            Container(
-              height: MediaQuery.of(context).size.height/2,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: mosquesImage.length,
-                itemBuilder: (context, index) {
-                  return MosqueItem(mosquesImage[index]);
-                }
-              ),
+            ScopedModelDescendant(
+              builder: (context, child, MosqueController model) {
+                return Container(
+                  height: MediaQuery.of(context).size.height/2,
+                  child: model.allMosques.isEmpty ? Center(child: Text('No Mosques Found', style: primaryTextStyle)) :
+                   ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: model.allMosques.length,
+                    itemBuilder: (context, index) {
+                      return MosqueItem(model.allMosques[index].img);
+                    }
+                  ),
+                );
+              }
             ),
           ],
         ),

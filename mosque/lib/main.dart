@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mosque/models/mosque/mosqueController.dart';
 import 'package:mosque/models/shared.dart';
 import 'package:mosque/screens/homepage.dart';
 import 'package:mosque/screens/signin.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() => runApp(MyApp());
+void main() async {
+   runApp(MyApp());
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+}
 
 
 class MyApp extends StatefulWidget {
@@ -25,9 +32,12 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: userEmail!.isEmpty ? SignIn() : HomePage(),
+    return ScopedModel(
+      model: MosqueController(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: userEmail!.isEmpty ? SignIn() : HomePage(),
+      ),
     );
   }
   checkUser() async {
@@ -38,42 +48,3 @@ void initState() {
     });
   }
 }
-
-
-
-// Client Side
-
-    // UI & Ux
-    // Front-end
-
-
-// API => Application Program Interface
-    // XML => tags
-    // JSON => Java Script Object Notation
-
-    // HTTP request ( Client Side ' Mobile App, Dektop App, WebFramework ' )
-        // URL ( bassel.com/courses )
-        // HTTP Method ( Get, Post, Put, Delete )
-        // Body ( send or recieve )
-        // Header ( Additonal Information About your request )
-
-
-// Server Side
-
-    // Database
-        // SQL
-          // MySql
-          // PostgreSQL
-          // MsSql
-          // OracleSQL
-
-        // Documented ( NoSQL )
-          // MongoDB
-          // Firebase
-    
-    // Back-end
-        // Python => Django, Flask, Bottle, Pyramid
-        // PHP => Laravel
-        // Ruby => Ruby on Rails
-        // JS => NodeJs
-        // C# => .Net, AspCore

@@ -50,13 +50,13 @@ class _AllNearbyMosqueState extends State<AllNearbyMosque> {
         ],
         elevation: 0.0,
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: mosquesImage.length,
-        itemBuilder: (context, index) {
-          return MosqueItem(mosquesImage[index]);
-        }
-      ),
+      // body: ListView.builder(
+      //   scrollDirection: Axis.vertical,
+      //   itemCount: mosquesImage.length,
+      //   itemBuilder: (context, index) {
+      //     return MosqueItem(mosquesImage[index]);
+      //   }
+      // ),
     );
   }
 }
